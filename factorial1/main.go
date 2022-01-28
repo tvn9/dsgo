@@ -3,18 +3,15 @@ package main
 import "fmt"
 
 // factorial
-func factorial(n int) {
-	var num int
+func factorial(n int) int {
 	if n < 1 {
-		num = 1
+		return 1
 	}
-	num = n * (n-1)
-	factorial(n - 1)
-
-	fmt.Println(num)
+	return n * factorial(n-1)
 }
 
 // program starting point
 func main() {
-	factorial(5)
+	a := factorial(5)
+	fmt.Println("Factorial of 5 is:", a)
 }

@@ -30,16 +30,18 @@ func (l *List) Push(value int) {
 	l.tail = node
 }
 
+// Next returns the next Node value
 func (n *Node) Next() *Node {
 	return n.next
 }
 
+// The app entry point
 func main() {
 	l := &List{}
 	for i := 0; i <= 100; i++ {
 		l.Push(i)
 	}
-
+	fmt.Println(l.head.value, l.head.next.value, l.tail.value)
 	n := l.First()
 	for {
 		fmt.Println(n.value)

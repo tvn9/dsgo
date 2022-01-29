@@ -13,7 +13,8 @@ func (s *Stack) Push(item int) {
 
 // Pop
 func (s *Stack) Pop() int {
-	if len(s.items) < 1 {
+	l := len(s.items)
+	if l < 1 {
 		return -1
 	}
 
@@ -34,7 +35,7 @@ func main() {
 		fmt.Printf("#%d push %d\n", i, v)
 	}
 
-	for i := len(s.items); i >= len(s.items); i-- {
+	for i := len(s.items) - 1; i >= 0; i-- {
 		fmt.Printf("#%d pop %d\n", i, s.Pop())
 	}
 }

@@ -26,9 +26,6 @@ func main() {
 
 	q.Enqueue(1)
 	q.Enqueue(2)
-	q.Enqueue(3)
-	q.Enqueue(4)
-	q.Enqueue(5)
 	q.Enqueue(6)
 
 	fmt.Println(q.Dequeue())

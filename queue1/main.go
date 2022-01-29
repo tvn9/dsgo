@@ -18,7 +18,7 @@ func (q *Queue) Dequeue() int {
 	if l < 1 {
 		return -1
 	}
-	fEl, nEl := q.items[0], q.items[1:l]
+	fEl, nEl := q.items[0], q.items[1:]
 	q.items = nEl
 	return fEl
 }

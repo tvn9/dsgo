@@ -46,6 +46,11 @@ func main() {
 		fmt.Printf("#%d dequeue %d\n", i, q.Dequeue())
 	}
 
+	// Testing dequeuing some more elements expected return value of -1
+	fmt.Println(q.Dequeue())
+	fmt.Println(q.Dequeue())
+	fmt.Println(q.Dequeue())
+
 	if len(q.items) > 0 {
 		panic("dequeue did not remove all elements")
 	}

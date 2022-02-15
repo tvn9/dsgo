@@ -3,18 +3,27 @@
 package main
 
 // importing fmt package
-import "fmt"
+import (
+	"fmt"
+	"os"
+)
 
 //gets the power series of integer a and returns tuple of square of a
 // and cube of a
-func powerSeries(a int) (int, int) {
-	return a * a, a * a * a
+func powerSeries(a int) (square, cube int, err error) {
+	square = a * a
+	cube = a * a * a
+	return square, cube, nil
 }
 
 // program entry
 func main() {
 	var square, cube int
-	square, cube = powerSeries(3)
+	var err error
+	square, cube, err = powerSeries(3)
+	if err != nil {
+		fmt.Fprintln(os.Stderr)
+	}
 
 	fmt.Println("Square", square, "Cube", cube)
 }

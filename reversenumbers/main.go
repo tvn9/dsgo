@@ -16,9 +16,7 @@ import (
 )
 
 func reverseInt(nums []int) []int {
-
 	numArray := []int{}
-
 	for _, n := range nums {
 		if n < 0 {
 			num := math.Abs(float64(n))
@@ -67,6 +65,7 @@ func numToString(num int) string {
 	return str
 }
 
+// Program entry
 func main() {
 	nums := []int{15, 891, 500, -15, -90}
 	fmt.Println(nums)

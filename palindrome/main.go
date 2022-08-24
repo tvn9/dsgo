@@ -21,12 +21,14 @@ func checkPalindrome2(str string) bool {
 	newStr := ""
 	for _, v := range str {
 		newStr = string(v) + newStr
-		if str == newStr {
-			palindrome = true
-		} else {
-			palindrome = false
-		}
 	}
+
+	if str == newStr {
+		palindrome = true
+	} else {
+		palindrome = false
+	}
+
 	return palindrome
 }
 

@@ -17,19 +17,24 @@ func checkPalindrome(str string) bool {
 
 // Solution 2
 func checkPalindrome2(str string) bool {
-	var palindrome bool
 	newStr := ""
 	for _, v := range str {
 		newStr = string(v) + newStr
 	}
+	return str == newStr
+}
 
-	if str == newStr {
-		palindrome = true
-	} else {
-		palindrome = false
+// Solution 3
+func checkPalindrome3(str string) bool {
+	var result bool
+	for i, v := range str {
+		if v == rune(str[len(str)-(i+1)]) {
+			result = true
+		} else {
+			result = false
+		}
 	}
-
-	return palindrome
+	return result
 }
 
 func main() {
@@ -37,4 +42,5 @@ func main() {
 	str := "racecar"
 	fmt.Println(checkPalindrome(str))
 	fmt.Println(checkPalindrome2(str))
+	fmt.Println(checkPalindrome3(str))
 }
